@@ -6,8 +6,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Our Story',
   description: 'Discover what makes Bondi Cafe special — specialty single-origin coffee, locally sourced ingredients, and a beachside setting that feels like home.',
+  keywords: ['bondi cafe story', 'single origin coffee bondi', 'locally sourced cafe sydney', 'beachside cafe bondi'],
+  alternates: { canonical: '/experience' },
   openGraph: {
     title: 'Our Story | Bondi Cafe',
+    description: 'Single-origin coffee, locally sourced ingredients, and a beachside setting on Campbell Parade, Bondi Beach.',
+    url: '/experience',
+    images: ['https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=80&fit=crop&auto=format'],
   },
 };
 

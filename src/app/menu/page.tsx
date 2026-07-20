@@ -7,8 +7,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Our Menu',
   description: 'Explore the full Bondi Cafe menu — specialty coffee, all-day breakfast, brunch, fresh lunch mains, pastries, cocktails and more.',
+  keywords: ['bondi cafe menu', 'bondi beach breakfast menu', 'all day breakfast bondi', 'specialty coffee bondi'],
+  alternates: { canonical: '/menu' },
   openGraph: {
     title: 'Our Menu | Bondi Cafe',
+    description: 'Specialty coffee, all-day breakfast, brunch, fresh lunch mains, pastries and cocktails at Bondi Beach.',
+    url: '/menu',
+    images: ['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&fit=crop&auto=format'],
   },
 };
 

@@ -6,9 +6,12 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Bondi Cafe | Specialty Coffee & Fresh Food · Bondi Beach',
   description: 'Specialty coffee, all-day breakfast, and fresh seasonal food on Campbell Parade, Bondi Beach. Open daily 5:00 AM – 11:00 PM.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Bondi Cafe | Specialty Coffee & Fresh Food',
     description: 'Specialty coffee, all-day breakfast, and fresh seasonal food overlooking Bondi Beach.',
+    url: '/',
+    images: ['https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&q=80&fit=crop&auto=format'],
   },
 };
 

@@ -1,0 +1,23 @@
+import type { MetadataRoute } from 'next';
+import { blogPosts } from '@/data/blog';
+
+const BASE_URL = 'https://www.aaronskoshe.com.au';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/`, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE_URL}/menu`, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE_URL}/experience`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/contact`, changeFrequency: 'monthly', priority: 0.7 },
+  ];
+
+  const postPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...postPages];
+}

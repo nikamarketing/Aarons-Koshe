@@ -4,8 +4,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Contact & Location',
   description: 'Find Bondi Cafe at 94 Campbell Parade, Bondi Beach NSW 2026. Open daily 5:00 AM – 11:00 PM.',
+  keywords: ['bondi cafe location', 'cafe campbell parade', 'bondi beach cafe contact', 'cafe near bondi beach'],
+  alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact & Location | Bondi Cafe',
+    description: '94 Campbell Parade, Bondi Beach NSW 2026 — open daily 5:00 AM – 11:00 PM. Dine in, takeaway, or delivery.',
+    url: '/contact',
+    images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&fit=crop&auto=format'],
   },
 };
 
