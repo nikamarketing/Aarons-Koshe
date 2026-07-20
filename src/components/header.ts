@@ -28,23 +28,6 @@ export function initHeader(): void {
     });
   }
 
-  // Menu dropdown (click to toggle — works on desktop tap & mobile)
-  const dropdown = document.querySelector('.nav-dropdown') as HTMLElement | null;
-  const dropdownToggle = dropdown?.querySelector('.nav-dropdown-toggle') as HTMLElement | null;
-  if (dropdown && dropdownToggle) {
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isOpen = dropdown.classList.toggle('open');
-      dropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target as Node)) {
-        dropdown.classList.remove('open');
-        dropdownToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
   const currentPath = window.location.pathname;
   navLinks?.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href') || '';
@@ -57,10 +40,10 @@ export function initHeader(): void {
     }
   });
 
-  // Highlight the "Menu" dropdown toggle when on any of its pages
-  const dropdownPages = ['/menu.html', '/coffee.html', '/breakfast.html', '/drinks.html'];
-  if (dropdownPages.some(p => currentPath.includes(p))) {
-    document.querySelector('.nav-dropdown-toggle')?.classList.add('active');
+  // Keep the "Menu" link highlighted on the menu and its sub-pages
+  const menuPages = ['/menu.html', '/coffee.html', '/breakfast.html', '/drinks.html'];
+  if (menuPages.some(p => currentPath.includes(p))) {
+    document.querySelector('.nav-links a[href="/menu.html"]')?.classList.add('active');
   }
 
   document.querySelectorAll('.mobile-nav-item').forEach(item => {
@@ -164,18 +147,7 @@ export function renderHeader(): string {
       <nav class="nav-links" role="navigation" aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            Menu
-            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a href="/menu.html" role="menuitem">Full Menu</a>
-            <a href="/coffee.html" role="menuitem">Specialty Coffee</a>
-            <a href="/breakfast.html" role="menuitem">Breakfast &amp; Brunch</a>
-            <a href="/drinks.html" role="menuitem">Drinks &amp; Juices</a>
-          </div>
-        </div>
+        <a href="/menu.html">Menu</a>
         <a href="/gallery.html">Gallery</a>
         <a href="/blog.html">Blog</a>
         <a href="/contact.html">Contact</a>
