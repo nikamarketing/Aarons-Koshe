@@ -157,9 +157,8 @@ export function renderHeader(): string {
       </svg>
     </div>
     <div class="header-inner">
-      <!-- Logo: text until real logo is added -->
       <a href="/" class="header-logo" aria-label="${config.brand.fullName} — Home">
-        <span class="logo-temp-text">Aaron's Koshe</span>
+        <img src="/assets/images/logo-white.png" alt="${config.brand.fullName}" style="height:56px;width:auto;max-width:55vw;object-fit:contain;display:block;" width="700" height="448">
       </a>
 
       <nav class="nav-links" role="navigation" aria-label="Main navigation">
